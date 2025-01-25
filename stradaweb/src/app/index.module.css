@@ -1,0 +1,62 @@
+.master {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  padding: 50px;
+  background-color: #fff;
+}
+
+.contextCointainer {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  border-radius: 7px;
+  max-width: 500px;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 0px 0px 10px #999;
+  background-color: #fff;
+}
+
+.header {
+  display: flex;
+  border-bottom: 1px solid #fff;
+  background-color: #F05B29;
+  width: 100%;
+  height: 100px;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Trebuchet MS';
+  font-weight: bold;
+  font-size: 24px;
+  color: #fff;
+  border-top-right-radius: 7px;
+  border-top-left-radius: 7px;
+  border-bottom: 2px solid #999;
+}
+
+.body {
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  flex: auto;
+  width: 100%;
+  padding-top: 25px;
+}
+
+.footer {
+  width: 100%;
+  height: 100px;
+  align-items: center;
+  justify-content: space-evenly;
+  display: flex;
+  border-top: 1px solid #ccc;
+  font-family: 'Trebuchet MS';
+  background-color: #eee;
+  border-bottom-right-radius: 7px;
+  border-bottom-left-radius: 7px;
+}
