@@ -1,0 +1,30 @@
+version: '3'
+
+services:
+  api_strada:
+    container_name: api_strada
+    build:
+      context: ./automate-api
+    ports:
+      - "5000:5000"
+    volumes:
+      - ./automate-api:/app
+    restart: always
+    command: uvicorn api:app --host 0.0.0.0 --port 5000 --reload
+
+  web_strada:
+    container_name: web_strada
+    build:
+      context: ./automate-web
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./automate-web:/app
+      - /app/node_modules  # Evita conflito de sobrescrita do node_modules
+    restart: always
+    command: npm start
+    environment:
+      CHOKIDAR_USEPOLLING: "true"
+      CHOKIDAR_INTERVAL: "100"
+      WATCHPACK_POLLING: "true"
+      NODE_ENV: "development"

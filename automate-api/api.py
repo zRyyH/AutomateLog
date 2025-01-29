@@ -3,7 +3,6 @@ from fastapi.middleware.cors import CORSMiddleware
 from strada import StradaLog
 from models import Settings
 
-
 app = FastAPI()
 
 
@@ -16,10 +15,15 @@ app.add_middleware(
     allow_headers=["*"],  # Permitir todos os cabeçalhos
 )
 
-
 StradaBOT = StradaLog()
-StradaBOT.run_loop()
 
+
+@app.get("/reset")
+def reset():
+    print("RESET")
+    StradaBOT.start_stop(state=False)
+    StradaBOT.set_settings(payload=[])
+    return {"status": "Resetado"}
 
 @app.get("/stop")
 def stop_loop():
@@ -27,22 +31,16 @@ def stop_loop():
     StradaBOT.start_stop(state=False)
     return {"status": "Loop parado"}
 
-
 @app.get("/start")
 def start_loop():
     print("START")
     StradaBOT.start_stop(state=True)
+    StradaBOT.run_loop()
+    print('running definido como:', True)
     return {"status": "Loop já está rodando"}
 
-
 @app.post("/set")
-def stop_loop(payload: Settings):
+def set_settings(payload: Settings):
     settings_data = payload.model_dump()['payload']
     StradaBOT.set_settings(payload=settings_data)
     return {"mensagem": "Dados recebidos com sucesso!", "dados": settings_data}
-
-
-if __name__ == "__main__":
-    import uvicorn
-
-    uvicorn.run(app, port=9000)

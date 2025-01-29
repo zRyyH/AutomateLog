@@ -1,0 +1,14 @@
+FROM node:18
+
+WORKDIR /app
+
+COPY package*.json ./
+RUN npm install
+
+COPY . .
+
+# Configura permissões para garantir acesso aos arquivos
+RUN chmod -R 777 /app
+
+EXPOSE 3000
+CMD ["npm", "start"]

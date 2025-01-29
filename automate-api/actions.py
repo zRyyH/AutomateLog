@@ -20,8 +20,7 @@ AppAuto = StradaLog()
 
 def refresh():
     AppAuto.auto_scroll(mode="bottom")
-
-
+    
 def check_ofertas():
     try:
         ofertas = []
@@ -62,11 +61,9 @@ def check_ofertas():
     except Exception as e:
         print(e)
 
-
 def solicitar(element):
     btn = AppAuto.find_element(element=element, xpath=XPATH_SOLICITAR)
     btn.click()
-
 
 def confirmar():
     try:
@@ -76,11 +73,9 @@ def confirmar():
     except:
         pass
 
-    
     AppAuto.auto_scroll(mode="top", delay=100)
     btn = AppAuto.select_element(xpath=XPATH_CONFIRMAR_SOLICITAR)
     btn.click()
-
 
 def rolagem():
     AppAuto.auto_scroll(mode='top')

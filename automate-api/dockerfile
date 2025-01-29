@@ -1,0 +1,20 @@
+# Use a imagem oficial do Python como base
+FROM python:3.12
+
+# Defina o diretório de trabalho no container
+WORKDIR /app
+
+# Copie os arquivos necessários para dentro do container
+COPY requirements.txt /app/requirements.txt
+
+# Instale as dependências do Python
+RUN pip install --no-cache-dir -r requirements.txt
+
+# Copie o restante do código da aplicação
+COPY . /app
+
+# Exponha a porta que o serviço Python vai rodar (ajuste conforme necessário)
+EXPOSE 5000
+
+# Comando correto para rodar o Uvicorn
+CMD ["uvicorn", "api:app", "--host", "0.0.0.0", "--port", "5000", "--reload"]

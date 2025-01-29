@@ -15,22 +15,23 @@ class StradaLog:
 
     def start_stop(self, state):
         self.running = state
+        print('Hello', state)
     
 
     def loop(self):
-        while True:
+        while self.running:
             try:
-                if self.running:
-                    time.sleep(1)
-                    ofertas = check_ofertas()
-                    for oferta in ofertas:
-                        for setting in self.settings:
-                            isOrigem1 = oferta['origem_1'] == setting['text1']
-                            isOrigem2 = oferta['origem_2'] == setting['text2']
-                            
-                            if isOrigem1 and isOrigem2:
-                                solicitar(element=oferta['oferta'])
-                                print(oferta)
+                time.sleep(1)
+                ofertas = check_ofertas()
+                print('buscando')
+                for oferta in ofertas:
+                    for setting in self.settings:
+                        isOrigem1 = oferta['origem_1'] == setting['text1']
+                        isOrigem2 = oferta['origem_2'] == setting['text2']
+                        
+                        if isOrigem1 and isOrigem2:
+                            solicitar(element=oferta['oferta'])
+                            print(oferta)
                     refresh()
             except Exception as e:
                 print(e)
