@@ -7,23 +7,23 @@ import styles from './index.module.css';
 const { Text } = Typography;
 
 const TextListApp = () => {
-  const [text1, setText1] = useState('');
-  const [text2, setText2] = useState('');
+  const [origem1, setOrigem1] = useState('');
+  const [origem2, setOrigem2] = useState('');
+  const [produto, setProduto] = useState('');
   const [items, setItems] = useState([]);
 
   const handleAddItem = async () => {
-    console.log(items);
-
-    if (text1.trim() === '' || text2.trim() === '') {
-      message.warning('Preencha ambos os campos antes de adicionar.');
+    if (origem1.trim() === '' || origem2.trim() === '' || produto.trim() === '') {
+      message.warning('Preencha todos os campos antes de adicionar.');
       return;
     }
 
-    const payload = [...items, { text1, text2 }];
+    const payload = [...items, { origem1, origem2, produto }];
 
     setItems(payload);
-    setText1('');
-    setText2('');
+    setOrigem1('');
+    setOrigem2('');
+    setProduto('');
     await fetchSettings({ payload });
 
     message.success('Textos adicionados à lista!');
@@ -38,21 +38,28 @@ const TextListApp = () => {
   };
 
   return (
-    <div className={styles.master} >
+    <div className={styles.master}>
       <Space direction="vertical" style={{ width: '100%' }}>
         <Row gutter={8}>
-          <Col span={12}>
+          <Col span={8}>
             <Input
-              placeholder="Digite a primeira origem..."
-              value={text1}
-              onChange={(e) => setText1(e.target.value)}
+              placeholder="Origem 1..."
+              value={origem1}
+              onChange={(e) => setOrigem1(e.target.value)}
             />
           </Col>
-          <Col span={12}>
+          <Col span={8}>
             <Input
-              placeholder="Digite a segunda origem..."
-              value={text2}
-              onChange={(e) => setText2(e.target.value)}
+              placeholder="Origem 2..."
+              value={origem2}
+              onChange={(e) => setOrigem2(e.target.value)}
+            />
+          </Col>
+          <Col span={8}>
+            <Input
+              placeholder="Tipo de produto..."
+              value={produto}
+              onChange={(e) => setProduto(e.target.value)}
             />
           </Col>
         </Row>
@@ -76,7 +83,7 @@ const TextListApp = () => {
               />
             ]}
           >
-            <Text strong>{item.text1}</Text> - <Text type="secondary">{item.text2}</Text>
+            <Text strong>{item.origem1}</Text> - <Text type="secondary">{item.origem2}</Text> - <Text>{item.produto}</Text>
           </List.Item>
         )}
       />

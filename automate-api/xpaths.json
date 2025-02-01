@@ -1,0 +1,27 @@
+{
+    "navigation": {
+        "screen_ofertas": "//android.view.ViewGroup[@resource-id='net.nuvem.mobile.carguero.release:id/toolbar_ofertas']//android.widget.TextView[@index='1']",
+        "screen_detalhe_oferta": "//android.view.ViewGroup[@resource-id='net.nuvem.mobile.carguero.release:id/toolbar_oferta_detalhe']//android.widget.TextView[@index='1']",
+        "screen_aguardando_aprovacao": "//android.view.ViewGroup[@resource-id='net.nuvem.mobile.carguero.release:id/toolbar_solicitacao_oferta']//android.widget.TextView[@text='Aguardando Aprovação']",
+        "screen_confirmacao": "//android.widget.TextView[@text='Confirmar Solicitação?' and @resource-id='net.nuvem.mobile.carguero.release:id/tv_title']"
+    },
+    "ofertas": {
+        "xpath_oferta_1": "(//android.widget.FrameLayout[@resource-id='net.nuvem.mobile.carguero.release:id/cv_oferta'])[1]",
+        "xpath_oferta_2": "(//android.widget.FrameLayout[@resource-id='net.nuvem.mobile.carguero.release:id/cv_oferta'])[2]",
+        "xpath_oferta_3": "(//android.widget.FrameLayout[@resource-id='net.nuvem.mobile.carguero.release:id/cv_oferta'])[3]"
+    },
+    "oferta": {
+        "xpath_produto": "//*[@resource-id='net.nuvem.mobile.carguero.release:id/tv_produto_nome']",
+        "xpath_origem_1": "//*[@resource-id='net.nuvem.mobile.carguero.release:id/tv_origem']",
+        "xpath_origem_2": "//*[@resource-id='net.nuvem.mobile.carguero.release:id/tv_local_coleta']",
+        "xpath_solicitar": "//*[@resource-id='net.nuvem.mobile.carguero.release:id/btn_solicitar']"
+    },
+    "detalhe_da_oferta": {
+        "xpath_pedagio": "//android.widget.Spinner[@resource-id='net.nuvem.mobile.carguero.release:id/spinner_field_adm']",
+        "xpath_solicitar": "//android.widget.Button[@resource-id='net.nuvem.mobile.carguero.release:id/fab_solicitar_oferta']",
+        "xpath_data_1": "(//android.widget.FrameLayout[@resource-id='net.nuvem.mobile.carguero.release:id/cv_data'])[1]",
+        "back_screen": "//android.widget.ImageButton[@content-desc='Navigate up']",
+        "confirmar": "//android.widget.Button[@text='CONFIRMAR' and @resource-id='net.nuvem.mobile.carguero.release:id/btn_positive']",
+        "cancelar": "//android.widget.Button[@text='CANCELAR' and @resource-id='net.nuvem.mobile.carguero.release:id/btn_negative']"
+    }
+}

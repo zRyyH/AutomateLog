@@ -1,7 +1,7 @@
 const endpoints = {
     STOP: '/stop',
     START: '/start',
-    SET: '/set'
+    SET: '/filters'
 };
 
 export default endpoints;

@@ -25,6 +25,7 @@ export const fetchStart = async () => {
 // Configurar bot de automação
 export const fetchSettings = async (payload) => {
     try {
+        console.log(payload)
         return await api.post(endpoints.SET, payload);
     } catch (error) {
         throw error;

@@ -22,3 +22,6 @@ urllib3==2.3.0
 websocket-client==1.8.0
 wsproto==1.2.0
 uvicorn==0.34.0
+selenium==4.28.1
+google-cloud-vision==3.9.0
+pillow==11.1.0
