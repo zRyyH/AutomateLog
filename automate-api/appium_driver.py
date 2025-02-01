@@ -35,7 +35,7 @@ class AppiumDriver:
         try:
             # Cria a conexão remota com o servidor Appium, passando as opções configuradas
             self.driver = webdriver.Remote(
-                f"http://192.168.3.250:4723", options=self.options
+                f"http://127.0.0.1:4723", options=self.options
             )
 
             # Mensagem de sucesso
