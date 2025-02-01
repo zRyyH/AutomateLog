@@ -15,14 +15,8 @@ class Manager:
         self.Actions = Actions(AppiumDriver=self.AppiumDriver)
 
         self.thread_loop = None
-        self.filters = [
-            {
-                "produto": "farelo de soja",
-                "origem1": "RONDoNÓPOLIS, MT",
-                "origem2": "RONdONOPOLIS",
-            }
-        ]
         self.running = False
+        self.filters = []
 
     def atualizar_ofertas(self):
         try:
