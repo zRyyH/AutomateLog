@@ -7,7 +7,6 @@ import traceback
 import threading
 import time
 
-
 class Manager:
     def __init__(self):
         self.AppiumDriver = AppiumDriver()
