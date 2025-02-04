@@ -14,6 +14,9 @@
         "xpath_produto": "//*[@resource-id='net.nuvem.mobile.carguero.release:id/tv_produto_nome']",
         "xpath_origem_1": "//*[@resource-id='net.nuvem.mobile.carguero.release:id/tv_origem']",
         "xpath_origem_2": "//*[@resource-id='net.nuvem.mobile.carguero.release:id/tv_local_coleta']",
+        "xpath_destino_1": "//android.widget.TextView[@resource-id='net.nuvem.mobile.carguero.release:id/tv_destino']",
+        "xpath_destino_2": "//android.widget.TextView[@resource-id='net.nuvem.mobile.carguero.release:id/tv_local_descarga']",
+        "xpath_valor": "//android.widget.TextView[@resource-id='net.nuvem.mobile.carguero.release:id/tv_valor' and contains(@text, 'R$')]",
         "xpath_solicitar": "//*[@resource-id='net.nuvem.mobile.carguero.release:id/btn_solicitar']"
     },
     "detalhe_da_oferta": {

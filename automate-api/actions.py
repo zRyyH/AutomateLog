@@ -67,7 +67,7 @@ class Actions:
             return True
         except:
             return False
-    
+
     def confirmar_oferta(self):
         try:
             ##### CUIDADO ESSE COMANDO CONFIRMA A OFERTA #####
@@ -75,8 +75,8 @@ class Actions:
                 "xpath", self.xpaths["detalhe_da_oferta"]["cancelar"]
             ).click()
 
-            print('=== ORDEM CONFIRMADA ===')
-            
+            print("=== ORDEM CONFIRMADA ===")
+
             return True
         except:
             return False
