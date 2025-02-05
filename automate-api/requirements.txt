@@ -26,3 +26,5 @@ selenium==4.28.1
 google-cloud-vision==3.9.0
 pillow==11.1.0
 keyboard==0.13.5
+SQLAlchemy==2.0.37
+PyMySQL==1.1.1
