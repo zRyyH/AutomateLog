@@ -32,9 +32,29 @@ const Fretes = sequelize.define('Fretes', {
     valor_acima_de: {
         type: DataTypes.INTEGER,
         allowNull: false
-    }
+    },
+    observacao: {
+        type: DataTypes.STRING
+    },
 }, {
     tableName: 'fretes',
+    timestamps: false,
+});
+
+// Define o modelo
+const Status = sequelize.define('Status', {
+    id: {
+        type: DataTypes.INTEGER,
+        primaryKey: true,
+        unique: true,
+    },
+    status: {
+        type: DataTypes.INTEGER,
+        allowNull: false,
+        unique: true
+    }
+}, {
+    tableName: 'status',
     timestamps: false,
 });
 
@@ -45,6 +65,8 @@ const Fretes = sequelize.define('Fretes', {
         console.log('Conexão bem-sucedida.');
 
         await Fretes.sync({ alter: true });  // Cria ou altera a tabela
+        await Status.sync({ alter: true });  // Cria ou altera a tabela
+
         console.log('Tabela sincronizada com sucesso.');
     } catch (error) {
         console.error('Erro ao sincronizar a tabela:', error);

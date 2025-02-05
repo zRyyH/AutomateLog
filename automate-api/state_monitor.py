@@ -55,8 +55,6 @@ class StateMonitor:
                     "solicitar": oferta.click,
                 }
 
-                print(produto, origem1, destino1, valor)
-
                 ofertas.append(data)
 
             except:
