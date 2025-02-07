@@ -36,6 +36,9 @@ class Manager:
 
     def buscar_oferta(self):
         try:
+            self.atualizar_ofertas()
+            time.sleep(3)
+
             while self.running:
                 ofertas = self.StateMonitor.ofertas_state()
 
@@ -46,11 +49,9 @@ class Manager:
                             return
 
                         case "FIM_DAS_OFERTAS":
-                            self.atualizar_ofertas()
                             return
                         
                         case "COMECO_DA_LISTA":
-                            self.atualizar_ofertas()
                             return
                         
                 self.Actions.scroll(scroll_value=-500)
@@ -85,6 +86,7 @@ class Manager:
 
     def loop(self):
         while self.running:
+            print('CHECANDO TELA')
             try:
                 screen_state = self.StateMonitor.screen_state()
                 key = screen_state.get("key")

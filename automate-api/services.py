@@ -1,6 +1,8 @@
 import traceback
 
 def validar_oferta(oferta, filters):
+    print('VALIDANDO OFERTAS')
+
     for filter in filters:
         valor = int(oferta["valor"].upper().split(',')[0].split(' ')[1])
         valor_minimo = int(filter["valor_acima_de"])
@@ -13,15 +15,16 @@ def validar_oferta(oferta, filters):
 
         isValor = valor >= valor_minimo or valor_minimo == 0
 
-        print(isProduto, isOrigem1, isOrigem2, isDestino1, isDestino2, isValor)
-
         if isProduto and isOrigem1 and isOrigem2 and isDestino1 and isDestino2 and isValor:
+            print("OFERTA VALIDA")
             return "OFERTA_VALIDA"
 
     if oferta["oferta"].get_attribute("bounds") == "[21,1469][1059,2232]":
+        print("FIM_DAS_OFERTAS")
         return "FIM_DAS_OFERTAS"
 
     if oferta["oferta"].get_attribute("bounds") == "[21,1162][1059,1925]":
+        print("COMECO_DA_LISTA")
         return "COMECO_DA_LISTA"
 
 

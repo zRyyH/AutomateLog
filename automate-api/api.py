@@ -1,6 +1,6 @@
 from keyboard_monitor import KeyLogger
-from manager import Manager
 from orm import get_fretes, get_status
+from manager import Manager
 import time
 
 
@@ -19,11 +19,11 @@ while True:
         if configuracoes['status'] == 0:
             StradaBOT.stop()
             print('DESLIGADO')
+
         else:
             StradaBOT.start()
             print('LIGADO')
 
         StradaBOT.filters = filtros_definidos
-
     except Exception as e:
         print('PROBLEMA NO BANCO DE DADOS!', e)
