@@ -22,9 +22,9 @@ class StateMonitor:
         ofertas = []
 
         for _, xpath in self.xpaths["ofertas"].items():
-            oferta = self.AppiumDriver.driver.find_element("xpath", xpath)
-
             try:
+                oferta = self.AppiumDriver.driver.find_element("xpath", xpath)
+
                 produto = oferta.find_element(
                     "xpath", self.xpaths["oferta"]["xpath_produto"]
                 ).text.upper()

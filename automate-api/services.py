@@ -21,6 +21,9 @@ def validar_oferta(oferta, filters):
     if oferta["oferta"].get_attribute("bounds") == "[21,1469][1059,2232]":
         return "FIM_DAS_OFERTAS"
 
+    if oferta["oferta"].get_attribute("bounds") == "[21,1162][1059,1925]":
+        return "COMECO_DA_LISTA"
+
 
 def validar_bounds_refresh(ofertas):
     for oferta in ofertas:

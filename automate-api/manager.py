@@ -26,10 +26,11 @@ class Manager:
                 match validar_bounds_refresh(ofertas):
                     case "COMECO_DA_LISTA":
                         self.Actions.scroll(scroll_value=500)
+                        time.sleep(3)
+                        self.Actions.scroll(scroll_value=-500)
+                        print('COMECO DA LISTA')
                         return
-
                 self.Actions.scroll(scroll_value=10000)
-
         except:
             print("Problema Em Atualizar Ofertas.")
 
@@ -45,6 +46,11 @@ class Manager:
                             return
 
                         case "FIM_DAS_OFERTAS":
+                            self.atualizar_ofertas()
+                            return
+                        
+                        case "COMECO_DA_LISTA":
+                            self.atualizar_ofertas()
                             return
                         
                 self.Actions.scroll(scroll_value=-500)
@@ -85,8 +91,6 @@ class Manager:
 
                 if key == "OFERTAS":
                     print("SCREEN: OFERTAS")
-                    self.atualizar_ofertas()
-                    time.sleep(3)
                     self.buscar_oferta()
 
                 elif key == "DETALHE DA OFERTA":
