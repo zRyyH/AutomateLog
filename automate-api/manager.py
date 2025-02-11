@@ -32,6 +32,7 @@ class Manager:
             while self.get_state_lista() != "COMECO_DA_LISTA":
                 print("VOLTANDO PARA O INICIO DA LISTA")
                 self.Actions.scroll(scroll_value=10000)
+                time.sleep(3)
 
             self.Actions.atualizar_ofertas()
         except:

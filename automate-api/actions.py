@@ -27,7 +27,7 @@ class Actions:
     def atualizar_ofertas(self):
         print("ATUALIZANDO OFERTAS")
         self.scroll(scroll_value=250)
-        time.sleep(2)
+        time.sleep(3)
 
     def select_pedagio(self):
         try:
