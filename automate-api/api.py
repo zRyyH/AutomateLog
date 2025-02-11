@@ -16,11 +16,11 @@ while True:
         filtros_definidos = get_fretes()
         configuracoes = get_status()
 
-        if configuracoes['status'] == 0:
+        if configuracoes['status'] == 0 and StradaBOT.running == 1:
             StradaBOT.stop()
             print('DESLIGADO')
-
-        else:
+            
+        elif configuracoes['status'] == 1 and StradaBOT.running == 0:
             StradaBOT.start()
             print('LIGADO')
 

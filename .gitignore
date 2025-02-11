@@ -1,26 +1,4 @@
-
 # Python dependencies
 /automate-api/__pycache__
 /automate-api/venv
-
-# Node dependencies
-/automate-web/node_modules
-/automate-web/.pnp
-/automate-web/.pnp.js
-
-# testing
-/automate-web/coverage
-
-# production
-/automate-web/build
-
-# misc
-/automate-web/.DS_Store
-/automate-web/.env.local
-/automate-web/.env.development.local
-/automate-web/.env.test.local
-/automate-web/.env.production.local
-
-/automate-web/npm-debug.log*
-/automate-web/yarn-debug.log*
-/automate-web/yarn-error.log*
+/automate-api/start_db/API/node_modules

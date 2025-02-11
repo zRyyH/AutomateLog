@@ -24,6 +24,11 @@ class Actions:
         actions.w3c_actions.pointer_action.pointer_up()
         actions.perform()
 
+    def atualizar_ofertas(self):
+        print("ATUALIZANDO OFERTAS")
+        self.scroll(scroll_value=250)
+        time.sleep(2)
+
     def select_pedagio(self):
         try:
             time.sleep(0.5)

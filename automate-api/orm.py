@@ -3,7 +3,7 @@ from sqlalchemy.orm import declarative_base
 from sqlalchemy.orm import sessionmaker
 
 
-engine = create_engine("mysql+pymysql://automate:Automate750*@160.238.242.80/automate")
+engine = create_engine("mysql+pymysql://automate:Automate750*@154.38.180.78/automate")
 Base = declarative_base()
 
 
@@ -13,9 +13,10 @@ class Fretes(Base):
     produto = Column(String(255), nullable=False)
     origem_1 = Column(String(255), nullable=False)
     origem_2 = Column(String(255), nullable=False)
-    destino_1 = Column(String(255), nullable=False, default="INDIFERENTE")
-    destino_2 = Column(String(255), nullable=False, default="INDIFERENTE")
-    valor_acima_de = Column(Integer, nullable=False, default=0)
+    destino_1 = Column(String(255), nullable=False)
+    destino_2 = Column(String(255), nullable=False)
+    valor_acima_de = Column(Integer, nullable=False)
+    observacao = Column(String(255), nullable=False)
 
     def to_dict(self):
         return {
