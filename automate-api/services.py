@@ -18,27 +18,54 @@ def status_lista(ofertas):
 
 def validar_oferta(oferta, filters):
     for filter in filters:
-        produto = (
-            filter["produto"].upper() == "INDIFERENTE"
-            or oferta["produto"].upper() == filter["produto"].upper()
+        oferta_produto, filter_produto = (
+            oferta["produto"].upper().strip(),
+            filter["produto"].upper().strip(),
         )
+        oferta_origem_1, filter_origem_1 = (
+            oferta["origem_1"].upper().strip(),
+            filter["origem_1"].upper().strip(),
+        )
+        oferta_origem_2, filter_origem_2 = (
+            oferta["origem_2"].upper().strip(),
+            filter["origem_2"].upper().strip(),
+        )
+        oferta_destino_1, filter_destino_1 = (
+            oferta["destino_1"].upper().strip(),
+            filter["destino_1"].upper().strip(),
+        )
+        oferta_destino_2, filter_destino_2 = (
+            oferta["destino_2"].upper().strip(),
+            filter["destino_2"].upper().strip(),
+        )
+        oferta_valor, filter_valor = int(oferta["valor"]), int(filter["valor_acima_de"])
+
+        produto = filter_produto == "INDIFERENTE" or oferta_produto == filter_produto
         origem_1 = (
-            filter["origem_1"].upper() == "INDIFERENTE"
-            or oferta["origem_1"].upper() == filter["origem_1"].upper()
+            filter_origem_1 == "INDIFERENTE" or oferta_origem_1 == filter_origem_1
         )
         origem_2 = (
-            filter["origem_2"].upper() == "INDIFERENTE"
-            or oferta["origem_2"].upper() == filter["origem_2"].upper()
+            filter_origem_2 == "INDIFERENTE" or oferta_origem_2 == filter_origem_2
         )
         destino_1 = (
-            filter["destino_1"].upper() == "INDIFERENTE"
-            or oferta["destino_1"].upper() == filter["destino_1"].upper()
+            filter_destino_1 == "INDIFERENTE" or oferta_destino_1 == filter_destino_1
         )
         destino_2 = (
-            filter["destino_2"].upper() == "INDIFERENTE"
-            or oferta["destino_2"].upper() == filter["destino_2"].upper()
+            filter_destino_2 == "INDIFERENTE" or oferta_destino_2 == filter_destino_2
         )
-        valor = int(oferta["valor"]) >= int(filter["valor_acima_de"])
+        valor = oferta_valor >= filter_valor
+
+        print(
+            f"Produto: {produto}, Origem 1: {origem_1}, Origem 2: {origem_2}, Destino 1: {destino_1}, Destino 2: {destino_2}, Valor: {valor}"
+        )
+
+        print(
+            f"Produto: {oferta_produto}, Origem 1: {oferta_origem_1}, Origem 2: {oferta_origem_2}, Destino 1: {oferta_destino_1}, Destino 2: {oferta_destino_2}, Valor: {oferta_valor}"
+        )
+
+        print(
+            f"Produto: {filter_produto}, Origem 1: {filter_origem_1}, Origem 2: {filter_origem_2}, Destino 1: {filter_destino_1}, Destino 2: {filter_destino_2}, Valor: {filter_valor}"
+        )
 
         if produto and origem_1 and origem_2 and destino_1 and destino_2 and valor:
             return "OFERTA_VALIDA"

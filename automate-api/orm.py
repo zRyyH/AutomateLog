@@ -3,7 +3,7 @@ from sqlalchemy.orm import declarative_base
 from sqlalchemy.orm import sessionmaker
 
 
-engine = create_engine("mysql+pymysql://automate:Automate750*@160.238.242.80/automate")
+engine = create_engine("mysql+pymysql://automate:Automate750*@154.38.180.78/automate")
 Base = declarative_base()
 
 
